@@ -24,7 +24,7 @@ class SAPPartnerGroup(models.Model):
     name            = fields.Char("Group Name")
     sapid           = fields.Char("SAP ID")
 
-class SAPPartnerGroup(models.Model):
+class SAPPartnerContact(models.Model):
     _name           = "cnwls.bp.contacts"
     _description    = "CNWLS BP Contact"
     company_id      = fields.Many2one('res.company', 'Company', required=True, index=True,  default=lambda self: self.env.user.company_id.id)
@@ -38,7 +38,7 @@ class SAPPartnerGroup(models.Model):
     sapid           = fields.Char("SAP ID")
 
 
-class SAPPartnerGroup(models.Model):
+class SAPPartnerOutlet(models.Model):
     _name           = "cnwls.bp.outlet"
     _description    = "CNWLS BP Outlet"
     company_id      = fields.Many2one('res.company', 'Company', required=True, index=True,  default=lambda self: self.env.user.company_id.id)
