@@ -36,6 +36,7 @@ class SAPPartnerContact(models.Model):
     nik             = fields.Char("NIK")
     address         = fields.Char("Address")
     sapid           = fields.Char("SAP ID")
+    
 
 
 class SAPPartnerOutlet(models.Model):
@@ -81,13 +82,7 @@ class SAPPartner(models.Model):
     cntctprsn       = fields.Char("Contact Person", default="")
     billaddress     = fields.Char("Billing Address",default="")
     address         = fields.Char("Address",default="")
-    mailaddress     = fields.Char("Mail Address",default="")
-    contact_ids     = fields.One2many("sap.bp.contact","bp_id",string="Contact")
-    outlet_ids      = fields.One2many("sap.bp.outlet","bp_id",string="Outlet")
-    invoice_ids     = fields.One2many("sap.bp.invoice","bp_id", string="Last Invoice")
-    penjualan_ids   = fields.One2many("sap.bp.penjualan","bp_id", string="Penjualan")
-    payment_ids     = fields.One2many("sap.bp.payment","bp_id",string="Last Payment")
-    special_price   = fields.One2many("sap.bp.specialprice","bp_id",string="Special Price")
+    mailaddress     = fields.Char("Mail Address",default="") 
 #follow up 
     laststatus      = fields.Char("Last Status")
     laststatus_date = fields.Datetime("Last Status Date")   
