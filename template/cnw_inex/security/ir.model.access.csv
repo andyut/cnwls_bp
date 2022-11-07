@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cnw_inex,access_cnw_inex,model_cnw_inex,,1,1,1,1
+access_cnw_jp,access_cnw_jp,model_cnw_jp,,1,1,1,1
+access_cnw_jp_account,access_cnw_jp_account,model_cnw_jp_account,,1,1,1,1
+access_cnw_jp_line,access_cnw_jp_line,model_cnw_jp_line,,1,1,1,1

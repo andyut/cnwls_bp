@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<title>Form pengajuan Ijin Import</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.google.com/specimen/Inconsolata'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+ @page {
+            size: A4;
+</style>
+<body> 
+    <div class="w3-container">
+
+<!--
+LINE 1
+-->
+        <div class="w3-row">
+            <div class="w3-col s4  w3-left-align">
+                <b><h5>Consignee : {{company}}</h5></b>
+            
+            </div>
+            <div class="w3-col s4 w3-tiny w3-center" >
+                    {{datetime}}<br/><br/><br/>
+
+                
+            </div>
+            <div class="w3-col s4 w3-right-align">
+                    <p > <h5> PENGAJUAN IJIN IMPORT</h5></p>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=50x50&data={{ name }}">
+                    <br/><br/>
+            
+            </div>   
+        </div>
+      </div>
+
+<!--
+LINE 2
+-->      
+<div class="w3-container">
+      <div class="w3-row w3-tiny">
+    
+                <div class="w3-col w3-tiny s4 w3-left-align" >
+                    <b>Jenis Ijin :</b> <br/>
+                    Rekom Provinsi : {% if rekom1 %}
+                                      <b>  [X] </b> <br/>
+                                     {%else %}
+                                     <b>  [ ] </b> <br/>
+                                     {%endif %}
+                    Rekom Kementan :{% if rekom2 %}
+                                      <b>  [X] </b> <br/>
+                                     {%else %}
+                                     <b>  [ ] </b> <br/>
+                                     {%endif %}
+                    Rekom Kelautan : {% if rekom3 %}
+                                      <b>  [X] </b> <br/>
+                                     {%else %}
+                                     <b>  [ ] </b> <br/>
+                                     {%endif %}
+  
+                </div> 
+                <div class="w3-col w3-tiny s4 w3-left-align" >
+                    <br/> Rekom B.P.O.M :{% if rekom4 %}
+                                      <b>  [X] </b> <br/>
+                                     {%else %}
+                                     <b>  [ ] </b> <br/>
+                                     {%endif %}
+                    Rekom Kemendag : {% if rekom5 %}
+                                      <b>  [X] </b> <br/>
+                                     {%else %}
+                                     <b>  [ ] </b> <br/>
+                                     {%endif %}
+                    Rekom Lain Lain : {% if rekom6 %}
+                                      <b>  [X] </b> <br/>
+                                     {%else %}
+                                     <b>  [ ] </b> <br/>
+                                     {%endif %}
+                </div>
+                <div class="w3-col w3-tiny  s4 w3-left-align">
+                        <b>Nomor Pengajuan :</b> {{name}}  <br/>
+                        <b>Tanggal Pengajuan :</b> {{docdate}} <br/>
+                        <b>Pelabuhan Tujuan :</b> {{pelabuhan}} <br/>
+                        <b>Negara Asal :</b> {{country}} <br/>
+                            
+                
+                </div>            
+      </div>
+</div>
+<br/>
+    
+      <div class="w3-container">
+            <table class="w3-table"   style="border: 1px solid black;font-size: 9px;border-collapse: collapse;border-spacing: 0;padding: 0;">
+                <thead>
+                    <tr>
+                      <th class="w3-center" width="20%"  style="border: 1px solid black;">HS Code</th>
+                      <th  class="w3-center"  width="60%" style="border: 1px solid black;">Description</th>
+                      <th  class="w3-center"  width="20%" style="border: 1px solid black;">Quantity (KG)</th>
+                    </tr>
+                </thead> 
+                {% for line in data  %}
+                
+                    <tr class="w3-tiny" style="line-height:2mm;">
+                      <td style="border: 1px solid black;font-size: 9px;">{{ line[0]}} </td>
+                      <td  class="w3-left-align" style="border: 1px solid black;font-size: 9px;">{{ line[1] }} </td>
+                      <td  class="w3-right-align"  style="border: 1px solid black;font-size: 9px;"> {{ "{:,.2f}".format(line[2])    }} </td>
+                    </tr>
+                {% endfor %}
+                  </table>
+      </div>
+ <br/>
+ <br/>
+      <div class="w3-container">
+            <div class="w3-row w3-center w3-small">
+                    <div class="w3-col s4 w3-center">
+                    Mengetahui,
+                    </div>
+                    <div class="w3-col s4 w3-center">  
+                    Menyetujui,
+                    </div>
+                    <div class="w3-col s4 w3-center">  
+                    Yang Mengajukan, <br/><br/><br/><br/><br/>
+                    </div>
+            </div>
+            <div class="w3-row w3-center w3-small">
+                    <div class="w3-col s4 w3-center">
+                    Juard Effendi 
+                    </div>
+                    <div class="w3-col s4 w3-center">  
+                    Erwin Effendi 
+                    </div>
+                        <div class="w3-col s4 w3-center">  
+                        Sisca Manullang
+                        </div>
+            </div>     
+    </div>   
+ 
+
+  <p style="page-break-before: always" ></p> 
+</body>
+</html>

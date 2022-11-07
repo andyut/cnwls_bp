@@ -1,0 +1,83 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+ 
+    <record model="ir.ui.view" id="cnw_jp_tree">
+      <field name="name">cnw.jp.tree</field>
+      <field name="model">cnw.jp</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="company_id"/>
+          <field name="name"/>
+          <field name="refdate"/> 
+          <field name="remarks1"/>
+          <field name="status"/>
+          <field name="debettotal" sum="totaldebit"/>
+          <field name="credittotal" sum="totalcredit" />
+          <field name="creator"/>
+          <field name="approval"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="cnw_jp_form">
+      <field name="name">cnw.jp_form</field>
+      <field name="model">cnw.jp</field>
+      <field name="arch" type="xml">
+        <form>
+        <header>
+        
+          <button name="print_kasbon" string="Print Kasbon" widget="binary_preview" type="object" class="btn-primary"
+            attrs="{'invisible': ['|', ('status', '=', 'draft'), ('status', '=', 'pending'),]}"/>
+          <button name="approve" string="Approve" widget="binary_preview" type="object" class="btn-primary" attrs="{'invisible': [('status', '=', 'posted')]}"/>
+          <field name="status" widget="statusbar" statusbar_visible="draft,pending,posted" />
+        </header>
+        <sheet>
+               <div class="oe_title">
+                    <h1>
+                        <field name="name" readonly="1"/>
+                    </h1>
+                    <h2>
+                        <field name="company_id" readonly="1"/>
+                    </h2>
+                </div>          
+          <group> 
+            <group>
+                <field name="refdate"/>
+                <field name="partner"/> 
+                <field name="remarks1"/> 
+              </group>
+              <group>
+                <field name="debettotal"/>
+                <field name="credittotal"/> 
+              </group>
+        </group> 
+        <notebook>
+          <page string="Jurnal Pemindahan">
+            <field name="jpline_ids" > 
+              <tree editable="top" >
+                <field name="account" />
+                <field name="acctcode" invisible="1"/>
+                <field name="remarks" />
+                <field name="debit" sum="total_debit" />
+                <field name="credit" sum="total_credit" />
+                <field name="amount"  invisible="1"/>
+
+              </tree>
+            </field>
+          </page>
+        </notebook>
+      </sheet>
+        </form>
+      </field>
+    </record>
+        
+    <!-- actions opening views on models -->
+
+<record model="ir.actions.act_window" id="cnw_jp_action">
+  <field name="name">Jurnal Pemindahan</field>
+  <field name="res_model">cnw.jp</field>
+  <field name="view_mode">tree,form</field>
+</record>
+
+  </data>
+</odoo>

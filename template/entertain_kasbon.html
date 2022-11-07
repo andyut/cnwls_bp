@@ -1,0 +1,111 @@
+<html>
+<head>
+	<title>Penerimaan / Pengeluaran Kas Bank</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body>
+<!-- header -->
+<div class="w3-row">
+	<div class ="w3-col s3">
+		<img src="{{logo}}" height="60" width="250">
+	</div>
+	<div class ="w3-col s3 w3-right-align w3-tiny">
+		&nbsp;
+	</div>	
+	<div class ="w3-col s3 w3-left-align w3-tiny">{{datetime}}
+	</div>
+
+	<div class ="w3-col s3 w3-right-align w3-tiny">		
+	<table class="w3-tiny">
+		<tr>
+			<td>
+				No. <br/>
+				Web No.<br/>
+				Source 
+		    </td>
+			<td>
+				: ..................... <br/>
+				: {{name}}<br/>
+				: <i>CNW-ENT Apps </i>
+			</td>
+		</tr>
+
+	</table>	
+			 
+	</div>
+
+</div>	
+<div class="w3-row"> 
+	<div class ="w3-col w3-center w3-text-red"><h6><strong><u>BUKTI PENGELUARAN KAS BANK</u></strong></h6></div>
+	 
+	
+</div>	
+<div class="w3-row">
+	<div class ="w3-col s4 w3-center">&nbsp;</div>
+	<div class ="w3-col s4 w3-center"  ><h6><strong>Rp. <u>{{amount}}</u></strong></h6></div>
+	<div class ="w3-col s4 w3-center">&nbsp;</div>
+	
+</div>	 
+<!-- Header 2 -->
+
+<div class="w3-container">
+	<table class="w3-table" style="">
+		<tr>
+			<td class="w3-tiny" style="width:20%;">Terbilang</td>
+			<td  style="width:5%;">:</td>
+			<td  class="w3-tiny" colspan="4" style="border-bottom: 1px dotted black;">{{terbilang}}</td>
+		</tr>
+		<tr>
+			<td class="w3-tiny" >Tunai/Cheque No</td>
+			<td>:</td>
+			<td  class="w3-tiny"   colspan="4" style="border-bottom: 1px dotted black;">CASH&nbsp;</td>
+		</tr>
+		<tr>
+			<td  class="w3-tiny" >Keterangan</td>
+			<td  style="width:5%;">:</td>
+			<td   class="w3-tiny" style="border-bottom: 1px dotted black;"> Biaya Entertain &nbsp;</td>
+		</tr>
+ 		<tr>
+			<td rowspan="5" class="w3-center w3-tiny"><img src="https://api.qrserver.com/v1/create-qr-code/?size=52x52&data={{name}}" > 
+				<br/>
+				created by {{creator}}
+			</td>
+			<td  style="width:5%;">&nbsp;</td>
+			<td   class="w3-tiny" style="border-bottom: 1px dotted black;">{{partner}} &nbsp;/ {{partner_company}}</td>
+		</tr>
+ 
+ 
+ 		<tr>
+			<td  style="width:5%;">&nbsp;</td>
+			<td   class="w3-tiny"  style="border-bottom: 1px dotted black;">{{remarks}} &nbsp;</td>
+		</tr>
+ 
+ 		<tr>
+			<td  style="width:5%;">&nbsp;</td>
+			<td   class="w3-tiny" >&nbsp;</td>
+		</tr>
+	</table>
+</div>    
+ 
+ <div class="w3-row" style="border-top: 1px dotted black;" >
+	<div class="w3-col s3 w3-center w3-tiny">Yang Menerima</div>
+	<div class="w3-col s3 w3-center w3-tiny">Pembukuan</div>
+	<div class="w3-col s3 w3-center w3-tiny">Direksi</div>
+	<div class="w3-col s3 w3-center w3-tiny">{{location}}, {{refdate}}<br/></div>
+</div>	 
+ <div class="w3-row">
+	<div class="w3-col s3 w3-center w3-tiny w3-cell-bottom	" >&nbsp;</div>
+	<div class="w3-col s3 w3-center w3-tiny w3-cell-bottom	">&nbsp;</div>
+	<div class="w3-col s3 w3-center w3-tiny w3-cell-bottom	">&nbsp;</div>
+	<div class="w3-col s3 w3-center w3-tiny w3-cell-bottom	" ><br/><img src="https://api.qrserver.com/v1/create-qr-code/?size=48x48&data={{approval}}" > </div>
+</div>	
+ <div class="w3-row">
+	<div class="w3-col s3 w3-center w3-tiny w3-cell-bottom	" >(.............)</div>
+	<div class="w3-col s3 w3-center w3-tiny w3-cell-bottom	">(.............)</div>
+	<div class="w3-col s3 w3-center w3-tiny w3-cell-bottom	">(.............)</div>
+	<div class="w3-col s3 w3-center w3-tiny w3-cell-bottom	" >{{approval}}</div>
+</div>	
+</body>
+</html>

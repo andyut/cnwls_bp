@@ -1,0 +1,20 @@
+<odoo>
+<data>
+    <!-- Top menu item -->
+    
+<menuitem sequence="100" name="BP" groups="cnw_bp_user" web_icon="cnwls_bp,static/description/icon.png" id="cnw_bp_menu_root"/> 
+
+<!-- 
+    <menuitem sequence="105" name="..." id="cnw_invar_menu_home" parent="cnw_invar_menu_root" action="cnw_home_action" />     -->
+    <menuitem sequence="200" name="[L] ist Partner"  groups="cnw_bp_user"  id="cnw_bp_menu" parent="cnw_bp_menu_root" />    
+ 
+        <menuitem sequence="201" name="Customer"  groups="cnw_bp_user"  id="cnw_bp_menu_201" parent="cnw_bp_menu" action="cnw_piaju_action"/> 
+        <menuitem sequence="202" name="Supplier"  groups="cnw_bp_user"  id="cnw_bp_menu_202" parent="cnw_bp_menu" action="cnw_piaju_action"/> 
+        
+  
+    <menuitem sequence="300" name="[I] Setting "  groups="cnw_pi_general,cnw_pi_perijinan"  id="cnw_bp_300_menu" parent="cnw_bp_menu_root" />    
+		<menuitem sequence="301"  name="HS"  groups="cnw_pi_general,cnw_pi_perijinan"  id="cnw_bp_menu_204" parent="cnw_bp_300_menu" action="cnw_hs_action"/> 
+		<menuitem sequence="302"  name="Syarat Kelengkapan Dokumen"  groups="cnw_pi_general,cnw_pi_perijinan"  id="cnw_bp_menu_205" parent="cnw_bp_300_menu" action="cnw_pi_jenis_action"/> 
+        
+    </data>
+</odoo>

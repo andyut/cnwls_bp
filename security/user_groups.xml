@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="module_cnw_pi_category" model="ir.module.category">
+            <field name="name">CNW-PI HS Purchase</field>
+        </record>
+ 
+        <record id="cnw_pi_general" model="res.groups">
+            <field name="category_id" ref="cnw_pi.module_cnw_pi_category" />
+            <field name="users" eval="[(4,ref('base.user_root'))]"/>
+            <field name="name">Regular User</field> 
+        </record>
+        <record id="cnw_pi_purchase" model="res.groups">
+            <field name="category_id" ref="cnw_pi.module_cnw_pi_category" />
+            <field name="users" eval="[(4,ref('base.user_root'))]"/>
+            <field name="name">Purchase User</field> 
+        </record>    
+        <record id="cnw_pi_perijinan" model="res.groups">
+            <field name="category_id" ref="cnw_pi.module_cnw_pi_category" />
+            <field name="users" eval="[(4,ref('base.user_root'))]"/>
+            <field name="name">Perijinan User</field> 
+        </record>                
+    </data>
+</odoo>
+ 

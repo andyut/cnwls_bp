@@ -1,0 +1,72 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+ 
+    <record model="ir.ui.view" id="cnw_inex_tree">
+      <field name="name">cnw.inex.tree</field>
+      <field name="model">cnw.inex</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="company_id"/>
+          <field name="name"/>
+          <field name="refdate"/>
+          <field name="jenis"/>
+          <field name="itype"/>
+          <field name="remarks1"/>
+          <field name="status"/>
+          <field name="amount"/>
+          <field name="creator"/>
+          <field name="approval"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="cnw_inex_form">
+      <field name="name">cnw_inex_form</field>
+      <field name="model">cnw.inex</field>
+      <field name="arch" type="xml">
+        <form>
+        <header>
+        
+          <button name="print_kasbon" string="Print" widget="binary_preview" type="object" class="btn-primary"
+            attrs="{'invisible': ['|', ('status', '=', 'draft'), ('status', '=', 'pending'),]}"/>
+          <button name="approve" string="Approve" widget="binary_preview" type="object" class="btn-primary" attrs="{'invisible': [('status', '=', 'posted')]}"/>
+          <field name="status" widget="statusbar" statusbar_visible="draft,pending,posted" />
+        </header>
+        <sheet>
+               <div class="oe_title">
+                    <h1>
+                        <field name="name" readonly="1"/>
+                    </h1>
+                    <h2>
+                        <field name="company_id" readonly="1"/>
+                    </h2>
+                </div>          
+          <group> 
+               <field name="refdate"/>
+              <field name="ref"/>
+              <field name="jenis"/>
+              <field name="itype"/>
+              <field name="remarks1"/>
+              <field name="remarks2"/>
+              <field name="remarks3"/>
+              <field name="remarks4"/>
+              <field name="amount"/>
+              <field name="terbilang" readonly="1"/>
+              
+          </group>
+       
+      </sheet>
+        </form>
+      </field>
+    </record>
+        
+    <!-- actions opening views on models -->
+
+<record model="ir.actions.act_window" id="cnw_inex_action">
+  <field name="name">Expense  Income</field>
+  <field name="res_model">cnw.inex</field>
+  <field name="view_mode">tree,form</field>
+</record>
+
+  </data>
+</odoo>

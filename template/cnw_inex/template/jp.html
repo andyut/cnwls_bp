@@ -1,0 +1,95 @@
+<html>
+<head>
+	<title>Penerimaan / Pengeluaran Kas Bank</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body>
+<!-- header -->
+<div class="w3-row">
+	<div class ="w3-col s3">
+		<img src="{{logo}}" height="60" width="250">
+	</div>
+	<div class ="w3-col s3 w3-right-align w3-tiny">
+		&nbsp;
+	</div>	
+	<div class ="w3-col s3 w3-center w3-tiny">{{datetime}}
+	</div>
+
+	<div class ="w3-col s3 w3-right-align w3-tiny">		
+	<table class="w3-tiny">
+		<tr>
+			<td>
+				No. <br/>
+				Web No.<br/>
+				Source 
+		    </td>
+			<td>
+				: ..................... <br/>
+				: {{name}}<br/>
+				: <i>CNW-IN-JP Apps </i>
+			</td>
+		</tr>
+
+	</table>	
+			 
+	</div>
+
+</div>	
+<div class="w3-row"> 
+	<div class ="w3-col w3-center"><h6><strong><u>JURNAL PEMINDAHAN</u></strong></h6></div> 
+	
+</div>	
+  
+<!-- Header 2 -->
+
+<div class="w3-container">
+	<table class="w3-table w3-tiny" style="">
+		<tr>
+			<th  class="w3-center"  style="width: 50%;border: 1px solid black;">KETERANGAN</th>
+			<th  class="w3-center"  style="border: 1px solid black;">DEBIT</th>
+			<th  class="w3-center" style="border: 1px solid black;">CREDIT</th>
+		</tr>
+	{% for line in detail %}
+		<tr>
+			<td style="border: 1px solid black;">{{ line[0] }}</td>
+			<td class="w3-right-align"   style="border: 1px solid black;">{{ "{:,.0f}".format(line[1])  }}</td>
+			<td class="w3-right-align"  style="border: 1px solid black;">{{ "{:,.0f}".format(line[2])   }}</td>
+		</tr>
+	{% endfor %}
+		<tr>
+			<td class="w3-right-align" style="border: 1px solid black;"><strong>TOTAL</strong></td>
+			<td class="w3-right-align"  style="border: 1px solid black;">{{  debettotal   }}</td>
+			<td class="w3-right-align"  style="border: 1px solid black;">{{ credittotal   }}</td>
+		</tr>
+	</table>
+</div>     
+<div class="w3-container">
+	<table class="w3-table w3-tiny" style="">
+		  
+		<tr>
+			<td style="width:20%"><b>KETERANGAN</b></td>
+			<td>: {{remarks1}} </td>
+			
+		</tr> 
+	</table>
+</div>    
+ <br/>
+ <div class="w3-row" style="border-top: 1px dotted black;" >
+	<div class="w3-col s4 w3-center w3-tiny">Pembukuan</div>
+	<div class="w3-col s4 w3-center w3-tiny">Diketahui / Disetujui</div>
+	<div class="w3-col s4 w3-center w3-tiny">{{location}}, {{refdate}}<br/></div>
+</div>	 
+ <div class="w3-row">
+	<div class="w3-col s4 w3-center w3-tiny w3-cell-bottom	">&nbsp;</div>
+	<div class="w3-col s4 w3-center w3-tiny w3-cell-bottom	">&nbsp;</div>
+	<div class="w3-col s4 w3-center w3-tiny w3-cell-bottom	" ><br/><img src="https://api.qrserver.com/v1/create-qr-code/?size=48x48&data={{approval}}" > </div>
+</div>	
+ <div class="w3-row">
+	<div class="w3-col s4 w3-center w3-tiny w3-cell-bottom	" >(.............)</div>
+	<div class="w3-col s4 w3-center w3-tiny w3-cell-bottom	">(.............)</div>
+	<div class="w3-col s4 w3-center w3-tiny w3-cell-bottom	" >{{approval}}</div>
+</div>	
+</body>
+</html>

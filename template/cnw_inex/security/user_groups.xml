@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="module_cnw_inex_category" model="ir.module.category">
+            <field name="name">CNW-Expense income payment</field>
+        </record>
+ 
+        <record id="cnw_inex_viewer" model="res.groups">
+            <field name="category_id" ref="cnw_inex.module_cnw_inex_category" />
+            <field name="users" eval="[(4,ref('base.user_root'))]"/>
+            <field name="name">Regular User</field> 
+        </record>
+        <record id="cnw_inex_approval" model="res.groups">
+            <field name="category_id" ref="cnw_inex.module_cnw_inex_category" />
+            <field name="users" eval="[(4,ref('base.user_root'))]"/>
+            <field name="name">Approval User</field> 
+        </record>      
+    </data>
+</odoo>

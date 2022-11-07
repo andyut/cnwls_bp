@@ -1,0 +1,18 @@
+<odoo>
+<data>
+    <!-- Top menu item -->
+    
+<menuitem sequence="100" name="CNW IN-EX" groups="cnw_inex_viewer" web_icon="cnw_inex,static/description/icon.png" id="cnw_inex_menu_root"/> 
+
+<!-- 
+    <menuitem sequence="105" name="..." id="cnw_invar_menu_home" parent="cnw_invar_menu_root" action="cnw_home_action" />     -->
+    <menuitem sequence="200" name="[L] ist Payment"  groups="cnw_inex_viewer"  id="cnw_inex_menu" parent="cnw_inex_menu_root" />    
+ 
+        <menuitem name="Payment"  groups="cnw_inex_viewer"  id="cnw_inex_menu_201" parent="cnw_inex_menu" action="cnw_inex_action"/> 
+  
+        <menuitem name="Jurnal Pemindahan"  groups="cnw_inex_viewer"  id="cnw_inex_menu_202" parent="cnw_inex_menu" action="cnw_jp_action"/> 
+
+    <menuitem sequence="300" name="[C] art of Account"  groups="cnw_inex_viewer"  id="cnw_account_menu" parent="cnw_inex_menu_root" />    
+        <menuitem name="Account"  groups="cnw_inex_viewer"  id="cnw_account_301" parent="cnw_account_menu" action="cnw_jp_account_action"/> 
+    </data>
+</odoo>

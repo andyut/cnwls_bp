@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cnw_hs,access_cnw_hs,model_cnw_hs,,1,1,1,1
+access_cnw_pi,access_cnw_pi,model_cnw_pi,,1,1,1,1
+access_cnw_pi_line,access_cnw_pi_line,model_cnw_pi_line,,1,1,1,1
+access_cnw_piaju,access_cnw_piaju,model_cnw_piaju,,1,1,1,1
+access_cnw_piaju_syarat,access_cnw_piaju_syarat,model_cnw_piaju_syarat,,1,1,1,1
+access_cnw_piaju_line,access_cnw_piaju_line,model_cnw_piaju_line,,1,1,1,1
+access_cnw_pi_jenis,access_cnw_pi_jenis,model_cnw_pi_jenis,,1,1,1,1
+access_cnw_pi_jenis_line,access_cnw_pi_jenis_line,model_cnw_pi_jenis_line,,1,1,1,1

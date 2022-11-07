@@ -1,0 +1,131 @@
+<html>
+<head>
+	<title>Penerimaan / Pengeluaran Kas Bank</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body>
+<!-- header -->
+<div class="w3-row">
+	<div class ="w3-col s3">
+        <img src="{{logo}}" height="60" width="250">
+	</div>
+	<div class ="w3-col s3 w3-right-align w3-tiny">
+		&nbsp;
+	</div>	
+	<div class ="w3-col s3 w3-left-align w3-tiny">{{datetime}}
+	</div>
+
+	<div class ="w3-col s3 w3-right-align w3-tiny">		
+	<table class="w3-tiny">
+		<tr>
+			<td>
+				No. <br/> 
+				Source 
+		    </td>
+			<td> 
+				: {{name}}<br/>
+				: <i>CNW-IN-EX Apps </i>
+			</td>
+		</tr>
+
+	</table>	
+			 
+	</div>
+
+</div>	
+<div class="w3-row">
+	<div class ="w3-col w3-center w3-text-indigo"><h6><strong><u><b>FORM PENGAJUAN BIAYA ENTERTAINMENT</b></u></strong></h6></div>
+	
+</div>	
+ 
+<!-- Header 2 -->
+
+<div class="w3-container">
+ <div class="w3-row" >
+    <div class="w3-col s6 w3-tiny">
+        <table class="w3-table w3-tiny">
+            <tr>
+                <td colspan="3"><h6>Lokasi Pemberian Entertainment</h6></td>
+            </tr>
+            <tr>
+                <td>Tanggal</td>
+                <td>:</td>
+                <td>{{refdate}}</td>
+            </tr>            
+            <tr>
+                <td>Tempat</td>
+                <td>:</td>
+                <td>{{location}}</td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td>:</td>
+                <td>{{address}}</td>
+            </tr>
+            <tr>
+                <td>Jenis</td>
+                <td>:</td>
+                <td>{{jenis}}</td>
+            </tr>
+            <tr>
+                <td>Jumlah : </td>
+                <td>:</td>
+                <td><b>{{amount}}</b></td>
+            </tr>            
+        </table>
+        
+    </div>
+    <div class="w3-col s6">
+        <table class="w3-table w3-tiny">
+            <tr>
+                <td colspan="3"><h6>Relasi Yang Di Entertainment</h6></td>
+            </tr>
+            <tr>
+                <td style="width:">Nama</td>
+                <td>:</td>
+                <td>{{partner}}</td>
+            </tr>            
+            <tr>
+                <td>Jabatan</td>
+                <td>:</td>
+                <td>{{jabatan}}</td>
+            </tr>
+            <tr>
+                <td>Nama Perusahaan</td>
+                <td>:</td>
+                <td>{{partner_company}}</td>
+            </tr>
+            <tr>
+                <td>Jenis Usaha</td>
+                <td>:</td>
+                <td>{{company_type}}</td>
+            </tr>
+            <tr>
+                <td>Maksud / Tujuan</td>
+                <td>:</td>
+                <td>{{remarks}}</td>
+            </tr>            
+        </table>        
+    </div>
+ </div>
+</div>    
+ 
+ <div class="w3-row" style="border-top: 1px dotted black;" >
+	<div class="w3-col s4 w3-center w3-tiny">&nbsp;</div> 
+	<div class="w3-col s4 w3-center w3-tiny">&nbsp;</div>
+	<div class="w3-col s4 w3-center w3-tiny">{{location}}, {{refdate}}<br/></div>
+</div>	 
+ <div class="w3-row">
+	<div class="w3-col s4 w3-center w3-tiny w3-cell-bottom	" >&nbsp;</div> 
+	<div class="w3-col s4 w3-center w3-tiny w3-cell-bottom	">&nbsp;</div>
+	<div class="w3-col s4 w3-center w3-tiny w3-cell-bottom	" ><br/><img src="https://api.qrserver.com/v1/create-qr-code/?size=48x48&data={{approval}}" > </div>
+</div>	
+ <div class="w3-row">
+	<div class="w3-col s4 w3-center w3-tiny w3-cell-bottom	" >&nbsp;</div> 
+	<div class="w3-col s4 w3-center w3-tiny w3-cell-bottom	">&nbsp;</div>
+	<div class="w3-col s4 w3-center w3-tiny w3-cell-bottom	" >{{approval}}</div>
+</div>	
+</body>
+</html>
